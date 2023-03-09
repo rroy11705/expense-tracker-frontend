@@ -44,7 +44,7 @@ function Form() {
                     type="text" 
                     value={title}
                     name={'title'} 
-                    placeholder="Salary Title"
+                    placeholder="Title"
                     onChange={handleInput('title')}
                 />
             </div>
