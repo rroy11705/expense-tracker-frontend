@@ -17,27 +17,21 @@ function Dashboard() {
         <DashboardStyled totalBalance={totalBalance()}>
             <InnerLayout>
                 <h1>All Transactions</h1>
-                <div className="stats-con">
-                    <div className="chart-con">
-                        <Chart />
-                    </div>
-                    <div className="history-con">
-                        <History />
-                    </div>
-                </div>
-                <div className='stats-con'>
-                    <div className="amount-con">
-                        <div className="income">
-                            <h2>Total Income</h2>
-                            <p>
-                                ₹ {totalIncome()}
-                            </p>
-                        </div>
-                        <div className="expense">
-                            <h2>Total Expense</h2>
-                            <p>
-                                ₹ {totalExpenses()}
-                            </p>
+                <div className="stats">
+                    <div className="amount">
+                        <div className='details'>
+                            <div className="income">
+                                <h2>Total Income</h2>
+                                <p>
+                                    ₹ {totalIncome()}
+                                </p>
+                            </div>
+                            <div className="expense">
+                                <h2>Total Expense</h2>
+                                <p>
+                                    ₹ {totalExpenses()}
+                                </p>
+                            </div>
                         </div>
                         <div className="balance">
                             <h2>Total Balance</h2>
@@ -46,6 +40,9 @@ function Dashboard() {
                             </p>
                         </div>
                     </div>
+                    <div className="history-con">
+                        <History />
+                    </div>
                 </div>
             </InnerLayout>
         </DashboardStyled>
@@ -53,32 +50,28 @@ function Dashboard() {
 }
 
 const DashboardStyled = styled.div`
-    .stats-con {
+    .stats {
         display: flex;
         flex-direction: row;
         gap: 2rem;
         @media (max-width: 576px) {
             flex-direction: column;
         }
-        .chart-con{
-            height: 400px;
+        .amount {
             width: 60%;
-            @media (max-width: 576px) {
-                width: 100%;
-                height: auto;
-            }
-        }
-        .amount-con {
-            width: 100%;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             gap: 2rem;
             margin-top: 2rem;
-            @media (max-width: 576px) {
-                flex-direction: column;
+            .details {
+                display: flex;
+                flex-direction: row;
+                gap: 2rem;
+                @media (max-width: 576px) {
+                    flex-direction: column;
+                }
             }
             .income, .expense, .balance {
-                flex-grow: 1;
                 background: #000000;
                 border-radius: 20px;
                 padding: 1rem;
@@ -88,13 +81,16 @@ const DashboardStyled = styled.div`
                 }
             }
             .income {
+                width: 50%;
                 color: var(--color-green);
             }
             .expense {
+                width: 50%;
                 color: var(--color-red);
             }
 
             .balance{
+                width: 100%;
                 grid-column: 2 / 4;
                 display: flex;
                 flex-direction: column;
