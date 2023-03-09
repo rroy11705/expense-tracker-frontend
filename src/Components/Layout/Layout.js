@@ -23,7 +23,7 @@ const Layout = () => {
                     <img src={avatar} alt="" />
                     <div className="text">
                         <h2>Roy</h2>
-                        <p>Sodtware Developer</p>
+                        <p>Software Developer</p>
                     </div>
                 </div>
                 <ul className="menu-items">

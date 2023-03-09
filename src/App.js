@@ -1,18 +1,12 @@
-import React, {useState, useMemo} from 'react'
+import React from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styled from "styled-components";
-import Orb from './Components/Orb/Orb'
 import Layout from './Components/Layout/Layout'
 import Dashboard from './Components/Dashboard/Dashboard';
 import Income from './Components/Income/Income'
 import Expenses from './Components/Expenses/Expenses';
-import { useGlobalContext } from './context/globalContext';
 
 function App() {
-
-  const orbMemo = useMemo(() => {
-    return <Orb />
-  }, [])
 
   return (
     <AppStyled className="App">
