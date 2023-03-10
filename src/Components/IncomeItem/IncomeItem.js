@@ -78,7 +78,7 @@ function IncomeItem({
                             {description}
                         </p>
                     </div>
-                    <div className="btn-con">
+                    <div className="btn">
                         <Button 
                             icon={trash}
                             bPad={'1rem'}
@@ -106,6 +106,9 @@ const IncomeItemStyled = styled.div`
     gap: 1rem;
     width: 100%;
     color: #222260;
+    @media (max-width: 576px) {
+        overflow: auto;
+    }
     .icon{
         width: 80px;
         height: 80px;
@@ -142,6 +145,7 @@ const IncomeItemStyled = styled.div`
 
         .inner-content{
             display: flex;
+            gap: 1rem;
             justify-content: space-between;
             align-items: center;
             .text{
@@ -150,6 +154,8 @@ const IncomeItemStyled = styled.div`
                 gap: 1.5rem;
                 p{
                     display: flex;
+                    overflow: auto;
+                    white-space: nowrap;
                     align-items: center;
                     gap: 0.5rem;
                     color: var(--primary-color);

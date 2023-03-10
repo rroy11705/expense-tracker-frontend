@@ -56,6 +56,9 @@ const IncomeStyled = styled.div`
         margin: 1rem 0;
         font-size: 2rem;
         gap: .5rem;
+        @media (max-width: 576px) {
+            flex-direction: column;
+        }
         span{
             font-size: 2.5rem;
             font-weight: 800;
@@ -65,6 +68,9 @@ const IncomeStyled = styled.div`
     .income-content{
         display: flex;
         gap: 2rem;
+        @media (max-width: 576px) {
+            flex-direction: column;
+        }
         .incomes{
             flex: 1;
         }

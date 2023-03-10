@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { useGlobalContext } from '../../context/globalContext';
-import History from '../../History/History';
+import History from '../History/History';
 import { InnerLayout } from '../../styles/Layouts';
 import Chart from '../Chart/Chart';
 
@@ -40,7 +40,7 @@ function Dashboard() {
                             </p>
                         </div>
                     </div>
-                    <div className="history-con">
+                    <div className="history">
                         <History />
                     </div>
                 </div>
@@ -63,6 +63,9 @@ const DashboardStyled = styled.div`
             flex-direction: column;
             gap: 2rem;
             margin-top: 2rem;
+            @media (max-width: 576px) {
+                width: 100%;
+            }
             .details {
                 display: flex;
                 flex-direction: row;
@@ -83,10 +86,16 @@ const DashboardStyled = styled.div`
             .income {
                 width: 50%;
                 color: var(--color-green);
+                @media (max-width: 576px) {
+                    width: 100%;
+                }
             }
             .expense {
                 width: 50%;
                 color: var(--color-red);
+                @media (max-width: 576px) {
+                    width: 100%;
+                }
             }
 
             .balance{
@@ -103,7 +112,7 @@ const DashboardStyled = styled.div`
             }
         }
 
-        .history-con{
+        .history{
             flex-grow: 1;
             h2{
                 margin: 1rem 0;

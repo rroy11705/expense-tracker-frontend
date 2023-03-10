@@ -20,7 +20,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body{
-        font-family: 'Nunito', sans-serif;
+        font-family: 'Roboto', sans-serif;
         font-size: clamp(1rem, 1.5vw, 1.2rem);
         overflow: hidden;
     }
